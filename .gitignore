@@ -1,3 +1,6 @@
 imgs/
 dados/
-submission.csv
+submissions/
+test/
+resnet_models/
+catboost_info/
