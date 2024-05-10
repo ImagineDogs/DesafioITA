@@ -28,11 +28,11 @@ os modelos errados para submissão. Aprendemos com isso e erros como esses serã
 A rede neural utilizada foi montada de forma personalizada, contando com uma resnet para as imagens e camadas densas para as variaveis.
 Ex:
 
-Resnet - Dense -
-                 \
-                    Dense - SoftMax
-                 /
-         Dense -
+Resnet - Dense -   
+.....................................\\  
+....................................... Dense - SoftMax  
+..................................../   
+................ Dense -  
 
 A rede foi treinada mantendo os parametros da resnet fixos. Durante o treinamento houveram variações nos otimizadores (Adam e SGBD) com diferentes taxas de aprendizagem e regularização, além de variações nas funções de loss (CrossEntropy e FocalLoss) também com diferentes parâmetos específicos.
 O resultado final não foi tão satisfatório quanto o dos modelos de boosting.
