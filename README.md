@@ -6,6 +6,11 @@
 
 ### Explicação dos Notebooks
 
+#### Preparação dos Dados
+
+Os dados meteorológicos foram convertidos utilizando o metpy, foram removidas as variáveis que apresentavam grande falta de dados, enquant as demais foram preenchidas utilizando o KNNImputer. 
+As imagens foram coletadas e cortadas conforme estratégia pessoal, em que o aeroporto de origem era recortado, considerando sua geolocalizacao, gerando uma nova imagem de 500x500, que era por fim redimensionada para 244x244 e guardada em um diretorio.
+
 #### Modelos 15+
 
 Os melhores modelos que encontramos nas bases de teste e em testes na plataforma do kaggle 'Public',  
@@ -18,6 +23,16 @@ modelos venceram os modelos utilizados por nós, e teriam nos colocado em segund
 falta de validação cruzada (KFold) em conjunto com análises apenas superficiais dos modelos que nos levaram a escolher  
 os modelos errados para submissão. Aprendemos com isso e erros como esses serão evitados em futuros projetos.
 
-#### Redes Neurais Convolucionais (Título provisório)
+#### Redes Neurais 5+
 
-Adicionar aqui a descrição dos notebooks q tu fez nengue.
+A rede neural utilizada foi montada de forma personalizada, contando com uma resnet para as imagens e camadas densas para as variaveis.
+Ex:
+
+Resnet - Dense -
+                 \
+                    Dense - SoftMax
+                 /
+         Dense -
+
+A rede foi treinada mantendo os parametros da resnet fixos. Durante o treinamento houveram variações nos otimizadores (Adam e SGBD) com diferentes taxas de aprendizagem e regularização, além de variações nas funções de loss (CrossEntropy e FocalLoss) também com diferentes parâmetos específicos.
+O resultado final não foi tão satisfatório quanto o dos modelos de boosting.
